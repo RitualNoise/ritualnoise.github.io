@@ -8,11 +8,12 @@
 		// fallback сработает если не откроется установленное приложение
 		function openStore(time) {
 			alert("Open store");
-			window.location.href = 'http://www.starclub.md';
+			//window.location.href = 'http://www.starclub.md';
+			window.location.href = 'starclubclient://';
 		};
 
 		// Задержка для того чтобы приложение успело открыться
-		var openTimeout = setTimeout(openStore(), 0);
+		var openTimeout = setTimeout(openStore(), 300);
 		var iframe = document.createElement('iframe');
 		iframe.onload = function() {
 			clearTimeout(openTimeout);
