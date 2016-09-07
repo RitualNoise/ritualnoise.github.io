@@ -1,42 +1,32 @@
 <html>
 <head>
 <title>Star Club ! Drink beer and surfing internet ! </title>
-<script type="text/javascript">
-	function openStore(time) {
-		window.location.href = 'http://www.starclub.md';
-	};
-</script>
 </head>
 
 <body onload = "TryLoadApp()">
 
 <script type="text/javascript">
-	function TryLoadApp() {
-		window.location = 'starclubclient://'; // will result in error message if app not installed
-		setTimeout(function() {
-			   window.location = "https://itunes.apple.com/us/app/myapp/id123456789?ls=1&mt=8";
-		}, 500);
-	}
+	window.addEventListener('error', function(e) {
+			console.log(e);
+			alert("Error caught");
 
+	}, true);
 </script>
-
 
 
 <script type="text/javascript">
-	function OpenApp() {
-		var appUrl = 'starclubclient://';
-		var openTimeout = setTimeout(openStore(), 20800);
-		var iframe = document.createElement('iframe');
-		iframe.onload = function() {
-			clearTimeout(openTimeout);
-			iframe.parentNode.removeChild(iframe);
-			window.location.href = appUrl;
+	function TryLoadApp() {
+		window.location = 'starclubclient://'; // will result in error message if app not installed
+		window.onerror = function() {
+			alert("Error caught");
 		};
-		iframe.src = appUrl;
-		iframe.style.display = 'none';
-		document.body.appendChild(iframe);
-	};
-</script>
+		setTimeout(function() {
+				   window.location = "http://www.starclub.md";
+		}, 500);
+	}
 
+
+
+</script>
 </body>
 </html>
