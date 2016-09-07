@@ -9,9 +9,6 @@
 <script type="text/javascript">
 	function OpenApp() {
 		var appUrl = 'starclubclient://';
-		function openStore(time) {
-			window.location.href = 'http://www.starclub.md';
-		};
 		var openTimeout = setTimeout(openStore(), 2800);
 		var iframe = document.createElement('iframe');
 		iframe.onload = function() {
@@ -22,6 +19,10 @@
 		iframe.src = appUrl;
 		iframe.style.display = 'none';
 		document.body.appendChild(iframe);
+	};
+
+	function openStore(time) {
+		window.location.href = 'http://www.starclub.md';
 	};
 </script>
 
