@@ -13,8 +13,6 @@
 
 		// Задержка для того чтобы приложение успело открыться
 		var openTimeout = setTimeout(openStore(), 300);
-		openStore();
-
 		var iframe = document.createElement('iframe');
 		iframe.onload = function() {
 			clearTimeout(openTimeout);
@@ -33,6 +31,7 @@
 
 <body>
 	<script type="text/javascript">
+		openStore();
 		OpenApp();
 	</script>
 
