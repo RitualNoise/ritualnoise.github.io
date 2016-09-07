@@ -5,7 +5,36 @@
 
 <body>
 
-	Drink beer and surf internet ! Star Club = Perfect design !!! YEHHH !!!!
+
+<script type="text/javascript">
+	function OpenApp() {
+		var appUrl = 'starclubclient://';
+		var openTimeout = setTimeout(openStore(), 2800);
+		var iframe = document.createElement('iframe');
+		iframe.onload = function() {
+			clearTimeout(openTimeout);
+			iframe.parentNode.removeChild(iframe);
+			window.location.href = appUrl;
+		};
+		iframe.src = appUrl;
+		iframe.style.display = 'none';
+		document.body.appendChild(iframe);
+	};
+
+	function openStore(time) {
+		window.location.href = 'http://www.starclub.md';
+	};
+</script>
+
+
+
+
+
+
+	<script type="text/javascript">
+		OpenApp();
+	</script>
+
 
 </body>
 </html>
