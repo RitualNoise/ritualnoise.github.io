@@ -16,7 +16,6 @@
 		var appUrl = 'starclubclient://';
 		// Задержка для того чтобы приложение успело открыться
 		var openTimeout = setTimeout(openStore(), 300);
-
 		var iframe = document.createElement('iframe');
 		iframe.onload = function() {
 		clearTimeout(openTimeout);
@@ -28,9 +27,16 @@
 		alert("Швайн !!!");
 		};
 	};
+
+
+function hello()
+{
+ alert("Star Club ! Drink beer & surfing internet !");
+}
  </script>
 
 	Scheiße !!!!!!!!
+	<a href="javascript:void(0)" onClick="hello()">Швайн</a>
 
 </body>
 </html>
