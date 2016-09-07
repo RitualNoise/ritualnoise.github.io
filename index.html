@@ -3,31 +3,28 @@
 <title>Star Club ! Drink beer and surfing internet ! </title>
 </head>
 
-<body onload = "TryLoadApp()">
+<body onload = "openApp()">
 
 <script type="text/javascript">
-	function TryLoadApp() {
-		var iframe = document.createElement("iframe");
+	var timeout;
 
-		iframe.style.border = "none";
-		iframe.style.width = "1px";
-		iframe.style.height = "1px";
-		iframe.onload = function () {
-			document.location = alt;
-		};
-		iframe.src = 'starclubclient://'; //iOS app schema url
-
-		window.onload = function(){
-			document.body.appendChild(iframe);
-		}
-
-		setTimeout(function(){
-				   window.location = 'http://www.starnet.md'; //fallback url
-				   },300);
+	function preventPopup() {
+		clearTimeout(timeout);
+		timeout = null;
+		window.removeEventListener('pagehide', preventPopup);
 	}
 
+function openApp() {
+	$('<iframe />')
+	.attr('src', 'starclubclient://')
+	.attr('style', 'display:none;')
+	.appendTo('body');
 
-
+	timeout = setTimeout(function() {
+						 document.location = 'http://www.starclub.md';
+						 }, 500);
+						 window.addEventListener('pagehide', preventPopup);
+}
 </script>
 </body>
 </html>
