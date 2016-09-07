@@ -8,11 +8,24 @@
 </script>
 </head>
 
-<body onload = "OpenApp()">
+<body onload = "TryLoadApp()">
+
+<script type="text/javascript">
+	function TryLoadApp() {
+		window.location = 'starclubclient://'; // will result in error message if app not installed
+		setTimeout(function() {
+			   window.location = "https://itunes.apple.com/us/app/myapp/id123456789?ls=1&mt=8";
+		}, 500);
+	}
+
+</script>
+
+
+
 <script type="text/javascript">
 	function OpenApp() {
 		var appUrl = 'starclubclient://';
-		var openTimeout = setTimeout(openStore(), 2800);
+		var openTimeout = setTimeout(openStore(), 20800);
 		var iframe = document.createElement('iframe');
 		iframe.onload = function() {
 			clearTimeout(openTimeout);
