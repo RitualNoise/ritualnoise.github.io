@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appID": "3EFP2B895H.bernikovich.UniversalLinks",
+        "appID": "M7LGQF7BBD.md.starlab.StarClubClient",
         "paths": [
           "*"
         ]
