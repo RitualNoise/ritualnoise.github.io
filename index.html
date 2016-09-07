@@ -5,19 +5,20 @@
 <script type="text/javascript">
 	function OpenApp() {
 		var appUrl = 'starclubclient://';
-
 		// fallback сработает если не откроется установленное приложение
 		function openStore(time) {
+			alert("Open store");
 			window.location.href = 'http://www.starclub.md';
 		};
 
 		// Задержка для того чтобы приложение успело открыться
-		var openTimeout = setTimeout(openStore(), 700);
+		var openTimeout = setTimeout(openStore(), 300);
 		var iframe = document.createElement('iframe');
 		iframe.onload = function() {
 			clearTimeout(openTimeout);
 			iframe.parentNode.removeChild(iframe);
 			window.location.href = appUrl;
+			alert("Try opening App");
 		};
 
 		iframe.src = appUrl;
@@ -31,7 +32,6 @@
 
 <body>
 	<script type="text/javascript">
-		openStore();
 		OpenApp();
 	</script>
 
