@@ -1,32 +1,33 @@
 <html>
 <head>
 <title>Star Club ! Drink beer & surfing internet ! </title>
+	<script language="JavaScript">
+
+	var appUrl = 'starclubclient://';
+
+	// fallback сработает если не откроется установленное приложение
+	function openStore(time) {
+	window.location.href = 'itms-apps://itunes.apple.com/app/youarAppInStore/appID';
+	};
+
+	// Задержка для того чтобы приложение успело открыться
+	var openTimeout = setTimeout(openStore(), 300);
+
+	var iframe = document.createElement('iframe');
+	iframe.onload = function() {
+	clearTimeout(openTimeout);
+	iframe.parentNode.removeChild(iframe);
+	window.location.href = appUrl;
+	};
+
+	iframe.src = appUrl;
+	iframe.style.display = 'none';
+	document.body.appendChild(iframe);
+	};
+	</script>
+
 </head>
 <body>
-<script language="JavaScript">
-
-var appUrl = 'starclubclient://';
-
-// fallback сработает если не откроется установленное приложение
-function openStore(time) {
-window.location.href = 'itms-apps://itunes.apple.com/app/youarAppInStore/appID';
-};
-
-// Задержка для того чтобы приложение успело открыться
-var openTimeout = setTimeout(openStore(), 300);
-
-var iframe = document.createElement('iframe');
-iframe.onload = function() {
-clearTimeout(openTimeout);
-iframe.parentNode.removeChild(iframe);
-window.location.href = appUrl;
-};
-
-iframe.src = appUrl;
-iframe.style.display = 'none';
-document.body.appendChild(iframe);
-};
-</script>
 
 
 </body>
