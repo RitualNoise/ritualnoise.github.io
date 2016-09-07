@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "M7LGQF7BBD.md.starlab.StarClubClient”,
+        "paths": [
+          "*"
+        ]
+      }
+    ]
+  }
+}
