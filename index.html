@@ -13,12 +13,11 @@ function OpenApp() {
 var appUrl = 'starclubclient://';
 
 // fallback сработает если не откроется установленное приложение
-$(document).ready(function() {
 function openStore(time) {
 window.location.href = 'https://ritualnoise.github.io';
 };
-});
 
+function loadDoc() {
 // Задержка для того чтобы приложение успело открыться
 var openTimeout = setTimeout(openStore(), 300);
 
@@ -33,6 +32,7 @@ iframe.src = appUrl;
 iframe.style.display = 'none';
 document.body.appendChild(iframe);
 };
+}
 </script>
 
 
@@ -45,5 +45,6 @@ document.body.appendChild(iframe);
 </head>
 <body>
 <a href="javascript:void(0)" onClick="hello()">Нажми меня пожалуйста</a>
+<a href "javascript:void(0)" onload = "loadDoc">Redirect</a>
 </body>
 </html>
