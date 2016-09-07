@@ -12,12 +12,12 @@
 
 <!--		var openTimeout = setTimeout(openStore(), 300);-->
 		var iframe = document.createElement('iframe');
-		iframe.onload = function() {
+<!--		iframe.onload = function() {-->
 			clearTimeout(openTimeout);
 			iframe.parentNode.removeChild(iframe);
 			window.location.href = appUrl;
 			alert("Try opening FUCKING App");
-		};
+<!--		};-->
 
 		iframe.src = appUrl;
 		iframe.style.display = 'none';
