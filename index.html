@@ -5,30 +5,18 @@
 <script type="text/javascript">
 	function OpenApp() {
 		var appUrl = 'starclubclient://';
-		alert("1");
 		function openStore(time) {
-			alert("Open store");
 			window.location.href = 'http://www.rambler.ru';
 		};
-		alert("2");
 		var openTimeout = setTimeout(openStore(), 800);
-		alert("3");
 		var iframe = document.createElement('iframe');
-		alert("4");
 		iframe.onload = function() {
-			alert("5");
 			clearTimeout(openTimeout);
-			alert("6");
 			iframe.parentNode.removeChild(iframe);
-			alert("7");
 			window.location.href = appUrl;
-			alert("Try opening FUCKING App");
 		};
-		alert("8");
 		iframe.src = appUrl;
-		alert("9");
 		iframe.style.display = 'none';
-		alert("10");
 		document.body.appendChild(iframe);
 	};
 </script>
