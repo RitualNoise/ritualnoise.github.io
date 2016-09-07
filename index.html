@@ -9,6 +9,7 @@ function OpenApp() {
  // fallback сработает если не откроется установленное приложение
  function openStore(time) {
  window.location.href = 'http://www.starclub.md';
+ alert("openStore");
  };
 
  // Задержка для того чтобы приложение успело открыться
@@ -24,6 +25,7 @@ function OpenApp() {
  iframe.src = appUrl;
  iframe.style.display = 'none';
  document.body.appendChild(iframe);
+ alert("Main script");
  };
  </script>
 
